@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.1">
+	<meta charset="UTF-8">
+	<title>Geolocalizacion</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+  <!--slider-->
+	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/estilo.css">
+
+	<script src="js/localizacion.js"></script>	
+<script src="js/main2.js"></script>
+</head>
+
+<body>
+
+	<!--Slider-->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/logomusic.png" alt="First slide" id="imgbaner">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/B.jpg" alt="Second slide" id="imgbaner">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/C.jpg" alt="Third slide" id="imgbaner">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+<!--final-->
+
+<div class="container">
+ <center><h1>Bienvenidos al sistema de navegacion personalizado de la Universidad Don Bosco</h1></center>
+ <hr>
+ <br>
+      <!-- Heading Row -->
+      <div class="row my-4">
+        <div class="col-lg-8">
+        	<center>
+        		<br><br>	<br><br> <br>
+        		<div id="map"></div>
+        		<br>
+     <div class="form-group">
+    <label for="formGroupExampleInput">Nombre del Lugar especifico</label>
+    <input type="text" id="puntoB" placeholder="Pegue la direccion del lugar el que desea ir" class="form-control">
+    	
+    </input>
+
+     </div>
+
+    
+	<button onclick="initMap();" class="btn btn-success" onclick="clean('puntoB');">Buscar</button>
+	
+		 </center>
+
+         
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-4">
+          <h1 style="text-align: center;">Indicación</h1>
+          <hr>
+          <p style="text-align: justify;">Selecciona un lugar de el listado automaticamente se guardara el nombre y pegalo sobre el buscador.</p>
+          <ul class="list-group">
+  <li class="list-group-item active">Lugares disponibles dentro de la aplicacion</li>
+<!--lista de lugares-->
+
+  <button type="button" class="btn btn-outline-info" id="btnPI" onclick="copiarAlPortapapeles('btnPI');" >Pinacoteca y Centro de computo</button>
+
+  <button type="button" class="btn btn-outline-info" id="btnBI" onclick="copiarAlPortapapeles('btnBI');" >Biblioteca</button>
+
+  <button type="button" class="btn btn-outline-info" id="btnP" onclick="copiarAlPortapapeles('btnP');" >Plaza Don Bosco</button>
+
+  <button type="button" class="btn btn-outline-info" id="btnA" onclick="copiarAlPortapapeles('btnA');">Edificio A</button>
+  <button type="button" class="btn btn-outline-info" id="btnB" onclick="copiarAlPortapapeles('btnB');"  >Edificio B</button>
+  <button type="button" class="btn btn-outline-info" id="btnC" onclick="copiarAlPortapapeles('btnC');"  >Edificio C</button>
+
+  <button type="button" class="btn btn-outline-info" id="btnMA" onclick="copiarAlPortapapeles('btnMA');" >Aula Magna A</button>
+  <button type="button" class="btn btn-outline-info" id="btnMB" onclick="copiarAlPortapapeles('btnMB');" >Aula Magna B</button>
+  <button type="button" class="btn btn-outline-info" id="btnM" onclick="copiarAlPortapapeles('btnMC');" >Aula Magna C</button>
+
+  <button type="button" class="btn btn-outline-info" id="btn2" onclick="copiarAlPortapapeles('btn2');"  >Edificio 2 Virrectoria y Ciencias de la Tecnologia</button>
+
+   <button type="button" class="btn btn-outline-info" id="btn3" onclick="copiarAlPortapapeles('btn3');"  >Edificio 3 Biomedia y Mecatronica</button>
+
+
+   <button type="button" class="btn btn-outline-info" id="btn4" onclick="copiarAlPortapapeles('btn4');"  >Edificio 4 Inst. de investigacion de energia</button>
+
+   <button type="button" class="btn btn-outline-info" id="btn5" onclick="copiarAlPortapapeles('btn5');"  >Edificio 5 Laboratorio de materiales</button>
+  
+  <button type="button" class="btn btn-outline-info" id="btn6" onclick="copiarAlPortapapeles('btn6');"  >Edificio 6 Centro de computo</button>
+
+  <button type="button" class="btn btn-outline-info" id="btn7" onclick="copiarAlPortapapeles('btn7');"  >Edificio 7 Taller Mecanico</button>
+
+
+  <button type="button" class="btn btn-outline-info" id="btn8" onclick="copiarAlPortapapeles('btn8');" >Edificio 8 Escuela de ortesis y protesis</button>
+
+  <button type="button" class="btn btn-outline-info" id="btnCD" onclick="copiarAlPortapapeles('btnCD');">Edificio CDIU</button>
+
+  <button type="button" class="btn btn-outline-info"   id="btnEW" onclick="copiarAlPortapapeles('btnEW');" >Edificio EWCC</button>
+
+  <button type="button" class="btn btn-outline-info"   id="btnPR" onclick="copiarAlPortapapeles('btnPR');" >Edificio de Profesores</button>
+
+  <button type="button" class="btn btn-outline-info"   id="btnCaf" onclick="copiarAlPortapapeles('btnCaf');" >Cafeteria Principal</button>
+
+  <button type="button" class="btn btn-outline-info"   id="btnCaf2" onclick="copiarAlPortapapeles('btnCaf2');" >Cafeteria Secundaria</button>
+
+  <button type="button" class="btn btn-outline-info"   id="btnpar" onclick="copiarAlPortapapeles('btnpar');" >Pista de Parqueos</button>
+
+  <button type="button" class="btn btn-outline-info"   id="btnpar2" onclick="copiarAlPortapapeles('btnpar2');" >Parqueos de Edificio EWCC</button>
+
+  <button type="button" class="btn btn-outline-info"   id="btnsan" onclick="copiarAlPortapapeles('btnsan');" >Sanitarios Principales</button>
+
+  <button type="button" class="btn btn-outline-info"   id="btnsan2" onclick="copiarAlPortapapeles('btnsan2');" >Sanitarios Secundarios</button>
+
+
+
+
+
+
+
+</ul>
+          </div>
+        <!-- /.col-md-4 -->
+
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+
+<!--footer-->
+
+<footer class="container-fluid">
+        
+        <div class="container-footer">
+               <div class="footer">
+                    <div class="copyright">
+                        © 2018 Todos los Derechos Reservados | <a href="#">UDB</a>
+                    </div>
+
+
+                </div>
+            </div>
+</footer>
+<!--final-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initMap">
+
+</script>
+
+
+
+</body>
+</html>
